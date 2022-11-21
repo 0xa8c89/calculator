@@ -1,6 +1,40 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     /* border: 1px solid black; */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1em;
+    margin-top: 5em;
+}
+.display {
+    padding: 1em 1em;
+    text-align: right;
+    font-size: 2em;
+    background-color: white;
+    margin-bottom: .5em;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.buttons {
+    display: flex;
+    gap: 1em;
+    width: auto;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+button {
+    height: 2.5em;
+    width: 2.5em;
+    flex: 1 1 auto;
+    border-radius: 10px;
+    font-size: 1.5em;
 }
