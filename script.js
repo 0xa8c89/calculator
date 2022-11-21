@@ -14,17 +14,31 @@ function devide(num1, num2) {
 function operate(operator, num1, num2) {
     switch (operator) {
         case '+':
-            add(num1, num2);
+            return add(num1, num2);
             break;
         case '-':
-            subtract(num1, num2);
+            return subtract(num1, num2);
             break;
         case 'x':
-            multiply(num1, num2);
+            return multiply(num1, num2);
             break;
         case '÷':
-            subtract(num1, num2);
+            return devide(num1, num2);
             break;
     }
 }
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const display = document.querySelector('.display');
+        if (button.textContent === 'c') {
+            display.textContent = '';
+            return;
+        }
+        if (button.textContent === '=') {
+        }
+
+        document.querySelector('.display').textContent += button.textContent;
+    })
+})
