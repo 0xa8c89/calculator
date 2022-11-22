@@ -67,8 +67,10 @@ buttons.forEach(button => {
             }
 
             if (display.textContent.split('.').length > 1) {
+                const result = operate(expression[1], parseFloat(expression[0]), parseFloat(expression[2]))
                 display.textContent = result.toFixed(1);
             } else {
+                const result = operate(expression[1], parseInt(expression[0]), parseInt(expression[2]))
                 display.textContent = result
             }
             return;
