@@ -32,11 +32,31 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const display = document.querySelector('.display');
-        if (button.textContent === 'c') {
+        const buttonContent = button.textContent;
+
+        if (buttonContent === 'c') {
             display.textContent = '';
             return;
         }
-        if (button.textContent === '=') {
+        if (buttonContent === 'x'|| buttonContent === '-' || buttonContent === '+' || buttonContent === '÷') {
+            display.textContent += ` ${buttonContent} `;
+            return;
+        }
+        if (buttonContent === '=') {
+            const expression = display.textContent.split(' ');
+            const result = operate(expression[1], expression[0], expression[2])
+
+            if (result === Infinity) {
+                display.textContent = "ERROR";
+                return
+            }
+
+            if (display.textContent.split('.').length > 1) {
+                display.textContent = result.toFixed(1);
+            } else {
+                display.textContent = result
+            }
+            return;
         }
 
         document.querySelector('.display').textContent += button.textContent;
