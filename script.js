@@ -29,6 +29,21 @@ function operate(operator, num1, num2) {
 }
 
 const buttons = document.querySelectorAll('button');
+
+// change collors
+buttons.forEach(button => {
+    if (!isNaN(+button.textContent)) {
+        button.style['backgroundColor'] = 'darkgray';
+        button.style['color'] = "white"
+    }
+    if (button.textContent === 'c') {
+        button.style['backgroundColor'] = '#41dd3f'
+    }
+    if (button.textContent === '=') {
+        button.style['backgroundColor'] = '#ffc107'
+    }
+})
+
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const display = document.querySelector('.display');
